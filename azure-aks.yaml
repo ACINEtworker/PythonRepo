@@ -47,6 +47,10 @@ spec:
   rules:
   - http:
       paths:
-      - backend:
-          serviceName: my-python-app
-          servicePort: 80
+      - path: /
+        backend:
+          service:
+            name: my-python-app
+            port:
+              number: 80
+        pathType: Exact
